@@ -1,5 +1,10 @@
 <?php
 
-declare(strict_types = 1);
+require_once '../Transaction.php';
+// Classes and objects
 
-phpinfo();
+$transaction = (new Transaction(100, 'Transaction 1')) 
+    -> addTax(100) 
+    -> discount(50);
+
+var_dump($transaction -> getAmount());

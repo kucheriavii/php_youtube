@@ -5,24 +5,24 @@ use App\PaymentGateWay\Paddle\Transaction;
 
 require __DIR__ . '/../vendor/autoload.php'; //замість тисячі require_once
 
-$transaction = new Transaction(25, 'Transaction 1');
-$transaction = new Transaction(25, 'Transaction 1');
-$transaction = new Transaction(25, 'Transaction 1');
-$transaction = new Transaction(25, 'Transaction 1');
-$transaction = new Transaction(25, 'Transaction 1');
+$transaction = new Transaction(25);
+$transaction->setAmount(125);
 
-var_dump(Transaction::getCount());
+$transaction->process();
+
+// $reflectionProperty = new ReflectionProperty(Transaction::class, 'amount');
+// $reflectionProperty->setAccessible(true);
+
+// $reflectionProperty->setValue($transaction, 500);
+
+// var_dump($reflectionProperty->getValue($transaction));
+//$transaction->amount;
+
+//ABSTRACTION
+
 
 
 //docker exec -it test_php bash -to run docker
 //composer dump-autoload - to update autoloads
 
-$db = DB::getInstance([]);
-$db = DB::getInstance([]);
-$db = DB::getInstance([]);
-$db = DB::getInstance([]);
-$db = DB::getInstance([]);
-$db = DB::getInstance([]);
-$db = DB::getInstance([]);
-$db = DB::getInstance([]);
-$db = DB::getInstance([]);
+
